@@ -100,12 +100,15 @@ Le fichier SQLite `biblio.db` est créé dans le dossier courant. Les adhérents
 
 ## Utilisation
 
-Tout d'abord toutes les commandes s'exécutent depuis votre terminal, directement à la racine du projet. 
+Tout d'abord toutes les commandes s'exécutent depuis votre terminal, directement à la racine du projet.
 
 **Remarque :** Si la commande `python` ne fonctionne pas sur votre machine, vous pouvez la remplacer par `python3` ou par `py`.
 
 ### Initialisation de la base de données
+
 Avant de commencer à utiliser l'application, il faut initialiser la base de données pour créer les tables et charger les données de démonstration :
+
+Si vous venez de faire l'installation, cette étape est déjà effectuée. La relancer remplace les données de la base, y compris les prêts enregistrés, par les données de démonstration. Les exemples ci-dessous se suivent dans l'ordre à partir de cette base.
 
 ```console
 python biblio.py init
@@ -174,7 +177,7 @@ Emprunt enregistre : livre 3, membre 1.
 
 ### Enregistrement d'un retour
 
-Pour enregistrer le retour d'un livre en stock, il suffit de renseigner son identifiant (`rendre <id_livre>`) :
+Pour enregistrer le retour d'un livre emprunté, il suffit de renseigner son identifiant (`rendre <id_livre>`) :
 
 ```console
 python biblio.py rendre 3
@@ -197,13 +200,15 @@ python biblio.py retards
 
 ```
 
-**Résultat :**
+**Résultat observé le 5 octobre 2026 :** les nombres de jours varient selon la date d'exécution.
 
 ```text
 Dune, emprunte par Alice Martin : 254 jours de retard
 Fondation, emprunte par Bilal Haddad : 259 jours de retard
 
 ```
+
+**Limitation connue :** `Fondation` apparaît ici alors qu'il a déjà été rendu et figure comme disponible dans le catalogue. La commande de suivi des retards inclut actuellement les prêts déjà rendus ; ce problème est suivi dans l'[issue #3](https://github.com/DeeW69/biblio-groupe-Ludivine-Sebastien/issues/3).
 
 ## Tests
 
