@@ -100,6 +100,111 @@ Le fichier SQLite `biblio.db` est créé dans le dossier courant. Les adhérents
 
 ## Utilisation
 
+Tout d'abord toutes les commandes s'exécutent depuis votre terminal, directement à la racine du projet. 
+
+**Remarque :** Si la commande `python` ne fonctionne pas sur votre machine, vous pouvez la remplacer par `python3` ou par `py`.
+
+### Initialisation de la base de données
+Avant de commencer à utiliser l'application, il faut initialiser la base de données pour créer les tables et charger les données de démonstration :
+
+```console
+python biblio.py init
+
+```
+
+**Résultat :**
+
+```text
+Base initialisee : 6 livres, 3 membres.
+
+```
+
+### Consultation du catalogue
+
+Pour afficher l'ensemble des livres de la bibliothèque ainsi que leur disponibilité actuelle, lancez :
+
+```console
+python biblio.py livres
+
+```
+
+Vous devez obtenir:
+
+```text
+[1] L'Etranger (Albert Camus) : disponible
+[2] Dune (Frank Herbert) : emprunte
+[3] Le Petit Prince (Antoine de Saint-Exupery) : disponible
+[4] Fondation (Isaac Asimov) : disponible
+[5] Les Miserables (Victor Hugo) : disponible
+[6] Neuromancien (William Gibson) : disponible
+
+```
+
+### Recherche d'un livre
+
+Vous pouvez chercher un livre en saisissant un mot-clé contenu dans son titre :
+
+```console
+python biblio.py chercher dune
+
+```
+
+**Résultat :**
+
+```text
+[2] Dune (Frank Herbert)
+
+```
+
+### Enregistrement d'un emprunt
+
+Lorsqu'un membre souhaite emprunter un livre, indiquez l'identifiant du livre suivi de l'identifiant du membre (`emprunter <id_livre> <id_membre>`) :
+
+```console
+python biblio.py emprunter 3 1
+
+```
+
+**Résultat :**
+
+```text
+Emprunt enregistre : livre 3, membre 1.
+
+```
+
+### Enregistrement d'un retour
+
+Pour enregistrer le retour d'un livre en stock, il suffit de renseigner son identifiant (`rendre <id_livre>`) :
+
+```console
+python biblio.py rendre 3
+
+```
+
+**Résultat :**
+
+```text
+Retour enregistre pour le livre 3.
+
+```
+
+### Suivi des retards
+
+Afin de repérer rapidement les emprunts qui ont dépassé la limite de 14 jours, exécutez la commande suivante :
+
+```console
+python biblio.py retards
+
+```
+
+**Résultat :**
+
+```text
+Dune, emprunte par Alice Martin : 254 jours de retard
+Fondation, emprunte par Bilal Haddad : 259 jours de retard
+
+```
+
 ## Tests
 
 Depuis la racine du projet, lancer la même commande que GitHub Actions :
