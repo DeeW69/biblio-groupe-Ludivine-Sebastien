@@ -36,7 +36,7 @@ Vérifier les fichiers sélectionnés avant de créer le commit. Les bases `.db`
 
 Ouvrir une PR de la branche de travail vers `main`. Remplir les sections du [modèle de PR](.github/pull_request_template.md) : **Contexte**, **Changements**, **Impact** et **Comment tester**. Indiquer les commandes réellement exécutées et leurs résultats.
 
-Ajouter `Closes #<numero>` dans la description, par exemple `Closes #16` pour l’issue #16. Garder un seul sujet par PR et demander la review de l’autre membre.
+Ajouter `Closes #<numero>` lorsque la PR résout une issue, par exemple `Closes #16` pour l’issue #16. Pour un ADR de cet atelier sans issue associée, expliquer la décision dans le contexte de la PR. Garder un seul sujet par PR et demander la review de l’autre membre.
 
 L’auteur fusionne après approbation et réussite du check `tests`, puis supprime la branche. La fusion ferme automatiquement l’issue liée. Les deux membres reviennent sur `main` et récupèrent les changements.
 
@@ -55,7 +55,7 @@ Cette checklist reprend les règles vérifiables du dépôt. Elle reste à confr
 Avant la fusion :
 
 - [ ] Les critères d’acceptation de l’issue sont satisfaits.
-- [ ] La PR traite un seul sujet et référence l’issue avec `Closes #<numero>`.
+- [ ] La PR traite un seul sujet ; si elle résout une issue, sa description contient `Closes #<numero>`.
 - [ ] Les tests locaux passent : `python -m unittest discover -s tests -t . -v`.
 - [ ] Le check GitHub Actions `tests` est vert.
 - [ ] La documentation concernée est à jour ; les commandes décrites ont été vérifiées.
