@@ -20,7 +20,7 @@ Les conventions déjà validées dans [circulation.md](docs/circulation.md#branc
 
 Publier la branche au premier envoi. Sur une branche partagée, répartir les fichiers ou sections, puis récupérer les changements des autres avant de pousser. Résoudre les conflits en conservant les contributions de chacun.
 
-L’ADR 0004 demandé dans le cours n’est pas encore présent dans `docs/adr/`. Les conventions ci-dessus devront être confrontées à cette décision dès qu’elle sera disponible.
+La [PR #22](https://github.com/DeeW69/biblio-groupe-Ludivine-Sebastien/pull/22) propose de formaliser ces règles dans l’ADR 0004, `docs/adr/0004-convention-de-branches.md`. Elle prévoit l’exception `docs/adr-NNNN` pour les ADR de cet atelier : par exemple `docs/adr-0002`, où `0002` est le numéro de l’ADR et non celui d’une issue. Les mots-clés des branches ordinaires sont courts, en minuscules, sans espaces ni accents et séparés par des tirets. Cette décision reste soumise à la review du groupe avant son acceptation.
 
 ## Commits
 
